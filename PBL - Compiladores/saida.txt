@@ -1,0 +1,6 @@
+1:1 - PRE	var
+1:5 - IDE	contador
+2:1 - IDE	cav
+2:5 - IDE	alo
+
+2:4 - SIB	$

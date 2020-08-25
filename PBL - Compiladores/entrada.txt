@@ -1,3 +1,2 @@
-entrada de dados
-via
-arquivo
+var contador
+cav$alo
