@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import uefs.pbl.compiladores.interfaces.Token;
 import uefs.pbl.compiladores.services.DelimiterService;
 import uefs.pbl.compiladores.services.IdentifierService;
+import uefs.pbl.compiladores.services.LogicalOperatorService;
+import uefs.pbl.compiladores.services.RelationalOperatorService;
 import uefs.pbl.compiladores.services.SymbolService;
 import uefs.pbl.compiladores.util.FileManipulator;
 import uefs.pbl.compiladores.util.Helpers;
@@ -36,7 +38,8 @@ public class LexiconController {
 		IdentifierService indentifierService = new IdentifierService();
 		DelimiterService delimiterService = new DelimiterService();
 		SymbolService symbolService = new SymbolService();
-		
+		RelationalOperatorService relationalOperatorService = new RelationalOperatorService();
+		LogicalOperatorService logicalOperatorService = new LogicalOperatorService(); 
 		// LOOP principal do analizador léxico
 		int character = -1;
 		do {
@@ -49,13 +52,17 @@ public class LexiconController {
 			}
 			
 			
-			if(character == 32) { // Se for espaço
+			if(Helpers.isSpace(character)) { // Se for espaço
 				// Não faz nada			
 			} else if (Helpers.isLetter(character)) { // Se for letra
 				tokens.add(indentifierService.identifierMachine(character));
-			} else if (Helpers.isDelimiter(character)) {
+			} else if (Helpers.isDelimiter(character)) { // Se for delimitador
 				tokens.add(delimiterService.delimiterMachine(character));
-			} else if (!(character < 31)){
+			} else if (Helpers.isRelationalOperator(character)) { // Se for um operador relacional
+				tokens.add(relationalOperatorService.relationalOperatorMachine(character));
+			} else if (Helpers.isLogicalOperator(character)) { // Se for um operador lógico
+				tokens.add(logicalOperatorService.logicalOperatorMachine(character));
+			} else if (!(character < 31)){ // se for um simbolo TODO fazer Helpper para simbolos
 				tokens.add(symbolService.symbolMachine(character));
 			}
 			

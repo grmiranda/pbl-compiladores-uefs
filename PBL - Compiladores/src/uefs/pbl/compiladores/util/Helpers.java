@@ -39,4 +39,28 @@ public class Helpers {
 			   word.compareTo("false") == 0;
 				
 	}
+
+	public static boolean isArithmeticOperator (int ascii) {
+		return 	ascii == 43 ||
+				ascii == 45 ||
+				ascii == 42 ||
+				ascii == 47;
+	}
+
+	public static boolean isLogicalOperator (int ascii) {
+		return 	ascii == 38 || // &
+				ascii == 124;  // |
+	}
+
+	public static boolean isRelationalOperator (int ascii) {
+		return 	ascii == 33 || // !
+				ascii == 60 || // <
+				ascii == 61 || // =
+				ascii == 62;   // >
+	}
+	
+	public static boolean isSpace (int ascii) {
+		return ascii == 9 || ascii == 32;
+	}
+
 }

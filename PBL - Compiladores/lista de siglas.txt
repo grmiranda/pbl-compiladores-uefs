@@ -1,13 +1,14 @@
 PRE 	palavra reservada
 IDE 	identificador
 DEL 	delimitador 
-NRO 	número
 REL 	operador relacional
 LOG 	operador logico
 ART 	operador aritmetico
+NRO 	número
 CAC 	cadeia de caracteres
 ----------------------------------------
 SIB		simbolo invalido
+OpMF 	operador mal formado
 CMF 	cadeia de caracteres mal formada
 CoMF 	comentario mal formado
 NMF 	número mal formado

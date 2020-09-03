@@ -1,5 +1,11 @@
 1:1 - PRE	var
 1:5 - IDE	contador
+1:14 - REL	=
+1:16 - IDE	teste
+1:22 - ART	!
+1:24 - REL	=
+1:26 - IDE	ee
+1:29 - REL	!=
 2:1 - IDE	cav
 2:5 - IDE	alo
 

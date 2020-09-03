@@ -23,7 +23,7 @@ public class IdentifierService {
 			tokenValue += (char) character;
 			character = fileManipulator.getNextChar();
 		} while (Helpers.isLetter(character) || Helpers.isDigit(character) || character == 95);
-		if(character != 32 && character != '\n') {
+		if(!Helpers.isSpace(character) && character != '\n') {
 			LexiconController lexiconController = LexiconController.getInstance();
 			lexiconController.setReanalyzeInputFlag(true);
 		}
