@@ -24,11 +24,11 @@ public class App {
 		// Solicitando ao usuário o nome dos arquivos de entrada e de saida do programa:
 		Scanner systemInput = new Scanner(System.in);
 		System.out.println("Informe o nome do arquivo de entrada:");
-		//String inputFileName = systemInput.nextLine();
-		String inputFileName = "entrada.txt";
+		String inputFileName = systemInput.nextLine();
+		// String inputFileName = "entrada.txt";
 		System.out.println("Informe o nome do arquivo de saida:");
-		//String outputFileName = systemInput.nextLine();
-		String outputFileName = "saida.txt";
+		String outputFileName = systemInput.nextLine();
+		// String outputFileName = "saida.txt";
 		systemInput.close();
 		
 		// Setando o gerenciador de arquivos
