@@ -1,4 +1,4 @@
-# PBL de Cmpiladores da UEFS
+# PBL de Compiladores da UEFS
 
 Projeto feito com a Eclipse IDE
 
