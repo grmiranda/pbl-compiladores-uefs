@@ -5,7 +5,7 @@ import uefs.pbl.compiladores.interfaces.Token;
 public class LogicalOperatorToken implements Token {
 	
 	private boolean errorToken = false;
-	private String tokenCode = "ART";
+	private String tokenCode = "LOG";
 	private String tokenValue = null;
 	private int tokenLine = 0;
 	private int tokenColumn = 0;

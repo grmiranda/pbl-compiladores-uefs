@@ -1,5 +1,9 @@
 package uefs.pbl.compiladores.util;
 
+import java.io.IOException;
+
+import uefs.pbl.compiladores.controller.LexiconController;
+
 public class Helpers {
 	public static boolean isLetter (int ascii) {
 		return (ascii >= 65 && ascii <= 90) || (ascii >= 97 && ascii <= 122); 
@@ -41,10 +45,10 @@ public class Helpers {
 	}
 
 	public static boolean isArithmeticOperator (int ascii) {
-		return 	ascii == 43 ||
-				ascii == 45 ||
-				ascii == 42 ||
-				ascii == 47;
+		return 	ascii == 43 || // +
+				ascii == 45 || // - 
+				ascii == 42 || // *
+				ascii == 47;   // /
 	}
 
 	public static boolean isLogicalOperator (int ascii) {
@@ -63,4 +67,16 @@ public class Helpers {
 		return ascii == 9 || ascii == 32;
 	}
 
+	public static void lineCommentSkip () throws IOException {
+		// Setando o gerenciador de arquivos
+		FileManipulator fileManipulator = FileManipulator.getInstance();
+		int next = 0;
+		do {
+			next = fileManipulator.getNextChar();
+		} while (next != 10 && next != -1);
+		if(next == -1) {
+			LexiconController lexiconController = LexiconController.getInstance();
+			lexiconController.setReanalyzeInputFlag(true);
+		}
+	}
 }

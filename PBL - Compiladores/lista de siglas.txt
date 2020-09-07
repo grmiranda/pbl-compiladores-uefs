@@ -9,6 +9,7 @@ CAC 	cadeia de caracteres
 ----------------------------------------
 SIB		simbolo invalido
 OpMF 	operador mal formado
+NMF 	número mal formado
 CMF 	cadeia de caracteres mal formada
 CoMF 	comentario mal formado
-NMF 	número mal formado
+

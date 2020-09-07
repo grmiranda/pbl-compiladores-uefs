@@ -1,2 +1,8 @@
-var contador = teste ! = ee !=
-cav$alo
+var contador;
+= teste ! = ee !=
+cav$alo&&.
+2
+-2
+2 -5
+2 -- 2.a
+2//- -2

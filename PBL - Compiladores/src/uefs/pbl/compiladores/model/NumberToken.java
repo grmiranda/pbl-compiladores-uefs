@@ -2,15 +2,15 @@ package uefs.pbl.compiladores.model;
 
 import uefs.pbl.compiladores.interfaces.Token;
 
-public class ArithmeticOperatorToken implements Token {
+public class NumberToken implements Token {
 	
 	private boolean errorToken = false;
-	private String tokenCode = "ART";
+	private String tokenCode = "NRO";
 	private String tokenValue = null;
 	private int tokenLine = 0;
 	private int tokenColumn = 0;
 	
-	public ArithmeticOperatorToken (String value, int line, int column) {
+	public NumberToken (String value, int line, int column) {
 		this.tokenValue = value;
 		this.tokenLine = line;
 		this.tokenColumn = column;
