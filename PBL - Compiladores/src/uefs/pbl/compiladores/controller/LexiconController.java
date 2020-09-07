@@ -10,6 +10,7 @@ import uefs.pbl.compiladores.services.IdentifierService;
 import uefs.pbl.compiladores.services.LogicalOperatorService;
 import uefs.pbl.compiladores.services.NumberService;
 import uefs.pbl.compiladores.services.RelationalOperatorService;
+import uefs.pbl.compiladores.services.StringService;
 import uefs.pbl.compiladores.services.SymbolService;
 import uefs.pbl.compiladores.util.FileManipulator;
 import uefs.pbl.compiladores.util.Helpers;
@@ -48,6 +49,7 @@ public class LexiconController {
 		LogicalOperatorService logicalOperatorService = new LogicalOperatorService();
 		ArithmeticOperatorService arithmeticOperatorService = new ArithmeticOperatorService(); 
 		NumberService numberService = new NumberService();
+		StringService stringService = new StringService();
 ;		// LOOP principal do analizador léxico
 		int character = -1;
 		do {
@@ -71,6 +73,8 @@ public class LexiconController {
 				this.tokens.add(relationalOperatorService.relationalOperatorMachine(character));
 			} else if (Helpers.isLogicalOperator(character)) { // Se for um operador lógico
 				this.tokens.add(logicalOperatorService.logicalOperatorMachine(character));
+			} else if (Helpers.isDoubleQuotes(character)) { // Se for " (aspas)
+				this.tokens.add(stringService.stringMachine(character));
 			} else if (Helpers.isArithmeticOperator(character)) { // Se for um operador aritimético
 				Token token = arithmeticOperatorService.arithmeticOperatorMachine(character);
 				if (token != null) { this.tokens.add(token); }
@@ -94,7 +98,7 @@ public class LexiconController {
 				tokensString += token.toString() + "\n";
 			}
 		}
-		return tokensString + "\n" + errorTokensString;
+		return tokensString + "\n" + "ERROS:" + "\n" + errorTokensString;
 	}
 
 }

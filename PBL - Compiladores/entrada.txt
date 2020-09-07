@@ -1,8 +1,9 @@
-var contador;
-= teste ! = ee !=
-cav$alo&&.
-2
--2
-2 -5
-2 -- 2.a
-2//- -2
+var contador = 2; // define o contador
+if(contador < 4){
+	/* responsável por incementar o contador */
+	contador++;
+	2- -2a2.
+	"string"!!=
+		"erro de com
+}
+/* testando 	 tab

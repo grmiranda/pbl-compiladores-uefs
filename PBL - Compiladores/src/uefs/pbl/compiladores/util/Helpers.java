@@ -79,4 +79,8 @@ public class Helpers {
 			lexiconController.setReanalyzeInputFlag(true);
 		}
 	}
+
+	public static boolean isDoubleQuotes (int ascii) {
+		return ascii == 34;
+	}
 }

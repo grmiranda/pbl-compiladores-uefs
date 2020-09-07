@@ -24,7 +24,11 @@ public class ArithmeticOperatorService {
 			if(character == 47) { // se for "/" define como comentário e chama o Helper
 				Helpers.lineCommentSkip();
 				return null;
-			} else {
+			} else if(character == 42) { // se for "*" define como comentário e chama a maquina de comentário de bloco
+				tokenValue += (char) character;
+				BlockCommentService blockCommentService = new BlockCommentService();
+				return blockCommentService.blockCommentMachine(tokenValue);
+			}else {
 				LexiconController lexiconController = LexiconController.getInstance();
 				lexiconController.setReanalyzeInputFlag(true);
 				token = new ArithmeticOperatorToken(tokenValue, tokenLine, tokenColumn);
