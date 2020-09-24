@@ -28,7 +28,8 @@ public class NumberService {
 				int floatPoint = character;
 				character = fileManipulator.getNextChar();
 				if(Helpers.isDigit(character)) {
-					tokenValue += (char) floatPoint + (char) character;
+					tokenValue += (char) floatPoint;
+					tokenValue += (char) character;
 					character = fileManipulator.getNextChar();
 				} else {
 					tokenValue += (char) floatPoint;

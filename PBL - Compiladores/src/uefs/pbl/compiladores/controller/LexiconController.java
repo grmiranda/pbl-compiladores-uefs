@@ -81,9 +81,9 @@ public class LexiconController {
 			} else if (!(character < 31)){ // se for um simbolo TODO fazer Helpper para simbolos
 				this.tokens.add(symbolService.symbolMachine(character));
 			}
-			if(this.tokens.size() > 0) {
-				System.out.println(this.tokens.get(this.tokens.size() - 1).toString() + "\n");
-			}
+//			if(this.tokens.size() > 0) {
+//				System.out.println(this.tokens.get(this.tokens.size() - 1).toString() + "\n");
+//			}
 		} while(character != -1);
 		return true;
 	}

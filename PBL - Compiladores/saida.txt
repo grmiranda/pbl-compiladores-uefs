@@ -1,28 +1,14 @@
-1:1 - PRE	var
-1:5 - IDE	contador
-1:14 - REL	=
-1:16 - NRO	2
-1:17 - DEL	;
-2:1 - PRE	if
-2:3 - DEL	(
-2:4 - IDE	contador
-2:13 - REL	<
-2:15 - NRO	4
-2:16 - DEL	)
-2:17 - DEL	{
-4:2 - IDE	contador
-4:10 - ART	++
-4:12 - DEL	;
-5:2 - NRO	2
-5:3 - ART	-
-5:6 - NRO	-2
-5:7 - IDE	a2
-5:9 - DEL	.
-6:2 - CAC	"string"
-6:10 - LOG	!
-6:11 - REL	!=
-8:1 - DEL	}
+1:1 - CAC	" ok "
+4:1 - IDE	NAO
+4:5 - IDE	pode
+4:10 - IDE	terminar
+4:19 - IDE	em
+4:22 - IDE	outra
+4:28 - IDE	linha
+8:1 - CAC	" diga \"oi\""
 
 ERROS:
-7:3 - CMF	"erro de com
-9:2 - CoMF	/* testando 	 tab
+3:1 - CMF	"cadeia de caracteres
+4:33 - CMF	"
+6:1 - CMF	" string com simbolo invalido ¶ "
+10:1 - CMF	" string \"nao fechada\"

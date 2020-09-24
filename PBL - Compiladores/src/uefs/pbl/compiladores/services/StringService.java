@@ -18,10 +18,14 @@ public class StringService {
 		int tokenLine = fileManipulator.getLineCounter();
 		int tokenColumn = fileManipulator.getColumnCounter();
 		Token token = null;
+		boolean invalidString = false;
 		
 		do {
 			tokenValue += (char) character;
 			character = fileManipulator.getNextChar();
+			if(character > 126 || (character < 32 && character != 9)) {
+				invalidString = true;
+			}
 			if(character == 92) { // se for \ (barra invertida)
 				tokenValue += (char) character;
 				character = fileManipulator.getNextChar();
@@ -44,7 +48,7 @@ public class StringService {
 			}
 		} while (!Helpers.isDoubleQuotes(character));
 		tokenValue += (char) character;
-		token = new StringToken(tokenValue, tokenLine, tokenColumn);
+		token = invalidString ? new InvalidStringToken(tokenValue, tokenLine, tokenColumn) : new StringToken(tokenValue, tokenLine, tokenColumn);
 		return token;
 	}
 }

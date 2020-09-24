@@ -1,9 +1,10 @@
-var contador = 2; // define o contador
-if(contador < 4){
-	/* responsável por incementar o contador */
-	contador++;
-	2- -2a2.
-	"string"!!=
-		"erro de com
-}
-/* testando 	 tab
+" ok "
+
+"cadeia de caracteres
+NAO pode terminar em outra linha"
+
+" string com simbolo invalido ¶ "
+
+" diga \"oi\""
+
+" string \"nao fechada\"
